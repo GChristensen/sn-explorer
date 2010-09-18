@@ -1,0 +1,234 @@
+html.centre, body.centre
+{
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, sans-serif;
+}
+
+html.centre
+{
+	height: 100%;
+	overflow: hidden;
+}
+
+body.centre
+{
+	height: 96%;
+	overflow: hidden;
+}
+
+html.loose, body.loose
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, sans-serif;
+}
+
+#page
+{
+	display: table;
+	overflow: hidden;
+	margin: 0px auto;
+	padding: 0px;
+	min-height: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+#content 
+{
+
+}
+
+#content_container
+{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+*:first-child+html #page {position:relative;}
+* html #page{position:relative;}
+*:first-child+html #content_container{position:absolute;top:50%;}
+* html #content_container{position:absolute;top:50%;}
+*:first-child+html #content{position:relative;top:-50%;left:-50%;}
+* html #content{position:relative;top:-50%;left:-50%;}
+
+#common-page
+{
+	padding: 0 10px;
+	text-align: justify;
+}
+
+.justify
+{
+	text-align: justify;
+}
+
+.red-text
+{
+	color: red;
+}
+
+.warn
+{
+	font-size: 70%;
+	margin-left: 10px;
+}
+
+.input-control
+{
+	width: 12em;
+}
+
+.submit
+{
+	text-align: right;
+}
+
+a:link, a:visited,a:active,a:hover
+{
+	color: black;
+}
+
+div.frame
+{
+	border: 1px solid black;
+	padding: 5px;
+}
+
+div.heading
+{
+	border-bottom: 1px solid black;
+	overflow: hidden;
+}
+
+div.button
+{
+	float: right;
+	margin: 0 10px;
+}
+
+table.heading
+{
+	margin: 5px;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table.form
+{
+	border-collapse: collapse;
+}
+
+table.heading td
+{
+	width: 50%;
+}
+
+table.form td
+{
+	padding: 5px;
+	text-align: left;
+}
+
+a.agreement
+{
+	display: block;
+	position: relative;
+	top: -2em;
+	outline: none;
+}
+
+a.about
+{
+	display: block;
+	position: relative;
+	top: -1em;
+	outline: none;
+}
+
+.logo
+{
+	font-size: 20pt;
+	font-style: italic;
+	font-weight: bold;
+	padding: 0 10px;
+}
+
+div.about
+{
+	width: 600px;
+	text-align: center;
+}
+
+div.error, div.access-denied
+{
+	text-align: center; 
+}
+
+.ver
+{
+	line-height: 20pt;
+	font-style: italic;
+}
+
+
+div.agreement
+{
+	width: 600px;
+	text-align: justify;
+}
+
+input.address, select.depth
+{
+	width: 20em;
+}
+
+hr.separator
+{
+	color: black;
+	background-color: black;
+	height: 1px;
+	border: 0;
+}
+
+p.status
+{
+	font-weight: bold;
+}
+
+#status-info 
+{
+	font-weight: normal;
+}
+
+select.graph-settings
+{
+	width: 5em;
+}
+
+object.graph
+{
+	width: 500px;
+	overflow: hidden;
+}
+
+div.graph-frame
+{
+	width: 500px;
+	padding: 5px;
+	float: left;
+	border-right: 1px solid black;
+}
+
+div.graph-links
+{
+	position: absolute;
+	left: 0;
+	margin-left: 525px;
+}
+
+div.graph-links a
+{
+}
