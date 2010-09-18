@@ -8,7 +8,7 @@ without multiprocessing and currently supports only popular russian VKontakte
 social network, therefore as is it could be interesting only for the corresponding 
 audience. It fully localized though (offand and a little clumsy) and could be 
 run in non cyrillic environment. It should be relatively easy to add support of 
-any other social network.
+any other social network to sn-explorer. 
 Besides crawling sn-explorer could also produce graphical social network 
 representation with the Graphviz graph rendering system.
 
