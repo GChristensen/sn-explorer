@@ -2,10 +2,10 @@ sn-explorer
 
 (C) 2010, g/christensen (gchristnsn@gmail.com)
 
-sn-explorer is a toy web crawler for social networks written in Common Lisp
-(it implements simplest possible breadth-first network traversal algorithm 
-without multiprocessing) which currently supports only popular russian VKontakte
-social network and as is could be interesting only for the corresponding 
+sn-explorer is a toy web crawler for social networks written in Common Lisp.
+It implements simplest possible breadth-first network traversal algorithm 
+without multiprocessing and currently supports only popular russian VKontakte
+social network, therefore as is it could be interesting only for the corresponding 
 audience. It fully localized though (offand and a little clumsy) and could be 
 run in non cyrillic environment. It should be relatively easy to add support of 
 any other social network.
@@ -42,6 +42,6 @@ Dependencies
       cl-fad
 
 sn-explorer-gui requires Common Lisp implementation with multiprocessing 
-capabilities (currently it was tested only with ClozureCL in Windows), but 
+capabilities (currently it was tested only with ClozureCL on Windows), but 
 sn-explorer library could run on single-threaded Lisp implementations
 (ClozureCL, SBCL, CLISP are supported).
