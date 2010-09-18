@@ -13,7 +13,7 @@ representation with the Graphviz graph rendering system.
 
 There is currently two ways to run sn-explorer:
 
-  1. Download Windows package and it should run out of the box (it will also
+  1. Download Windows package, and it should run out of the box (it will also
      isntall "Microsoft Visual C++ 2005 Redistributable" required by Graphviz).
   2. Install Graphviz, place sn-explorer and all its dependencies into ASDF 
      repository, issue the following instructions in your Lisp environment REPL:
