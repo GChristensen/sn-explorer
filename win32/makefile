@@ -1,10 +1,10 @@
 all: dll launcher
 
-dll: traymenu.cpp traymenu.def
-	g++ -DUNICODE -D_UNICODE -shared -o traymenu.dll traymenu.cpp traymenu.def -Wl,--enable-stdcall-fixup
+dll: traymenu.c traymenu.def
+	gcc -DUNICODE -D_UNICODE -shared -static-libgcc -o traymenu.dll traymenu.c traymenu.def -Wl,--enable-stdcall-fixup
 
-launcher: launcher.cpp
-	g++ -DUNICODE -D_UNICODE -mwindows -o sn-explorer.exe launcher.cpp
+launcher: launcher.c
+	gcc -DUNICODE -D_UNICODE -mwindows -static-libgcc -o sn-explorer.exe launcher.c
 
 clean:
 	del /Q *.dll

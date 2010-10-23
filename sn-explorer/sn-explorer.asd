@@ -14,6 +14,8 @@
                (:file "sn-explorer-client" :depends-on ("packages"))
                (:file "sn-explorer-client-vkontakte" 
 					  :depends-on ("sn-explorer-client"))
+               (:file "sn-explorer-client-facebook" 
+					  :depends-on ("sn-explorer-client"))
                (:file "sn-explorer-crawler" :depends-on ("sn-explorer-client"))
                (:file "sn-explorer-graph" 
 					  :depends-on ("sn-explorer-client" "sn-explorer-crawler"))

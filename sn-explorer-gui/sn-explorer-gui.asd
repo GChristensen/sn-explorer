@@ -14,7 +14,8 @@
                (:file "i18n" :depends-on ("packages"))
                (:file "strings-ru" :depends-on ("i18n"))
                (:file "strings-en" :depends-on ("i18n"))
-               (:file "sysdep" :depends-on ("packages"))
-               (:file "sn-explorer-gui" :depends-on ("packages" "i18n" "sysdep")))
+               (:file "traymenu" :depends-on ("packages"))
+               (:file "sysdep" :depends-on ("packages" "traymenu"))
+               (:file "sn-explorer-gui" :depends-on ("i18n" "sysdep")))
   :depends-on (:hunchentoot :ht-simple-ajax :cl-who :parenscript :cl-json
-			   :cl-fad :sn-explorer))
+			   :cl-fad :sn-explorer :cffi))

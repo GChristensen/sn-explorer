@@ -15,7 +15,7 @@
 				   :int 0))
 
 #+(and (or win32 windows) production)
-(defcallback menu-callback :void ((code :int))
+(def-menu-callback menu-callback (code)
   (case code
 	(200 (open-gui-impl))
 	(201 (cleanup-and-terminate))))
@@ -23,17 +23,16 @@
 #+(and (or win32 windows) production)
 (defun sysdep-init-impl ()
   (load-foreign-library "Shell32")
-  (load-foreign-library "traymenu")
+  (use-tray-menu)
   (with-system-language
-	(foreign-funcall "show_tray_icon" :string #$icon-tip 
-					 :pointer (callback menu-callback))
-	(foreign-funcall "add_tray_menu_item" :int 200 :string #$menu-open)
-	(foreign-funcall "add_tray_menu_item" :int 201 :string #$menu-exit))
+	(show-tray-icon #$icon-tip menu-callback)
+	(add-tray-menu-item 200 #$menu-open)
+	(add-tray-menu-item 201 #$menu-exit))
   (open-gui-impl))
 
 #+(and (or win32 windows) production)
 (defun sysdep-finalize-impl ()
-  (foreign-funcall "hide_tray_icon"))
+  (hide-tray-icon))
 
 (defun sysdep-init ()
   #+(and (or win32 windows) production) (sysdep-init-impl))

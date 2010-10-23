@@ -68,7 +68,7 @@
 							*login-url*
 							:parameters `((,*login-field* . ,user)
 										  (,*passw-field* . ,password)))))
-      ;; check whether login successed
+      ;; check whether login succeeded
 	  (register-groups-bind (id-string)
 		  (*agent-id-scanner* body)
 		(when (not (null id-string))

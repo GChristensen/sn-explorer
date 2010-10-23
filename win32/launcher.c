@@ -6,7 +6,6 @@
 
 #include "sn-explorer.h"
 
-
 DWORD LaunchTarget(TCHAR *target, TCHAR *arguments)
 {
 	STARTUPINFOW siStartupInfo;
@@ -47,7 +46,7 @@ int WINAPI _tWinMain(HINSTANCE hInstance,
 	DWORD new_path_len = GetEnvironmentVariable(_T("PATH"), NULL, 0);
 	new_path_len += module_dir_len * 2 + 50;
 
-	TCHAR *path = new TCHAR[new_path_len];
+	TCHAR *path = (TCHAR *)malloc(new_path_len * sizeof(TCHAR));
 
 	GetEnvironmentVariable(_T("PATH"), path, new_path_len);
 	DWORD path_len = _tcslen(path);
@@ -74,14 +73,16 @@ int WINAPI _tWinMain(HINSTANCE hInstance,
 	_tcscpy(target_path, module_dir);
 	_tcscpy(target_path + module_dir_len, _T("bin\\sn-explorer-gui.bin"));
 
+	free(path);
+
 	return LaunchTarget(target_path, NULL);
 }
 
 #if defined(__GNUC__) && defined(_UNICODE) && !defined(_tWinMain)
-int WinMain(HINSTANCE hInstance,
-            HINSTANCE hPrevInstance,
-            LPSTR     lpCmdLine,
-            int       nCmdShow)
+int WINAPI WinMain(HINSTANCE hInstance,
+                   HINSTANCE hPrevInstance,
+                   LPSTR     lpCmdLine,
+                   int       nCmdShow)
 {
     return _tWinMain(hInstance, NULL, GetCommandLine(), 0);
 }

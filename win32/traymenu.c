@@ -21,8 +21,8 @@ HWND hWnd = NULL;
 HINSTANCE hInstance = NULL;
 
 BOOL APIENTRY DllMain(HMODULE hModule,
-                      DWORD  ul_reason_for_call,
-                      LPVOID lpReserved)
+                                 DWORD  ul_reason_for_call,
+                                 LPVOID lpReserved)
 {
 	switch( ul_reason_for_call ) 
     {
@@ -151,7 +151,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-extern "C" VOID WINAPI show_tray_icon(TCHAR *tooltip, external_callback callback)
+VOID WINAPI show_tray_icon(TCHAR *tooltip, external_callback callback)
 {
 	iconSet = TRUE;
 	menuCallback = callback;
@@ -161,7 +161,7 @@ extern "C" VOID WINAPI show_tray_icon(TCHAR *tooltip, external_callback callback
 	CreateThread(NULL, 0, messageLoop, NULL, 0, NULL);
 }
 
-extern "C" VOID WINAPI hide_tray_icon()
+VOID WINAPI hide_tray_icon()
 {
 	if (iconSet)
 	{
@@ -170,7 +170,8 @@ extern "C" VOID WINAPI hide_tray_icon()
 	}
 }
 
-extern "C" VOID WINAPI add_tray_menu_item(int code, TCHAR *text)
+VOID WINAPI add_tray_menu_item(int code, TCHAR *text)
 {
-	AppendMenu(hMenu, MFT_STRING, code, text);
+	UINT flags = _tcsstr(text, _T("--"))? MF_SEPARATOR: MFT_STRING;
+	AppendMenu(hMenu, flags, code, text);
 }

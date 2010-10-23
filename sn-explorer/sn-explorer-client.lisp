@@ -58,7 +58,8 @@
   (remove key (sn-user-data user) :key #'car))
 
 ;; light wrapper on drakma:http-request
-(defun sn-http-request (session method url &key parameters (redirect t))
+(defun sn-http-request (session method url &key parameters headers 
+						(redirect t))
   (let* ((stream-is-reusable (sn-stream-reusable-p session))
 		 (stream (when stream-is-reusable (sn-stream session))))
     (let ((stream (when (and stream (open-stream-p stream)) 
@@ -67,6 +68,7 @@
 		  (http-request url
 						:method method
 						:parameters parameters
+						:additional-headers headers
 						:proxy *sn-http-proxy*
 						:user-agent *user-agent*
 						:cookie-jar (sn-cookies session)
@@ -134,6 +136,13 @@ Returns downloaded image pathname."
   (:documentation "Generic method to enter a social network.
 Returns fresh SN session."))
 
+(defgeneric sn-get-session-cookie (session name))
+
+(defmethod sn-get-session-cookie ((session sn-session) name)
+  (let ((cookies (cookie-jar-cookies (sn-cookies session))))
+	(do ((c cookies (cdr cookies)))
+		((or (null c) (string= (cookie-name (car c)) name)) (car c)))))
+  
 (defgeneric sn-extract-user-id (session page-url)
   (:documentation "Extracts user id from user's page content."))
 

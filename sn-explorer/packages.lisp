@@ -6,6 +6,7 @@
   (:use :common-lisp :drakma)
   (:export *supported-social-networks*
 		   *sn-http-proxy*
+		   *user-agent*
 		   sn-session
 		   sn-user
 		   sn-user-id
@@ -21,6 +22,7 @@
 		   sn-mk-userfile-path
 		   sn-load-userpic
 		   sn-login
+		   sn-get-session-cookie
 		   sn-extract-user-id
 		   sn-logout
 		   sn-agent-id
