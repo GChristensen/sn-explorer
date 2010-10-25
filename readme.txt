@@ -28,6 +28,8 @@ Dependencies
 
   * Graphviz (http://graphviz.org)
 
+  * OpenSSL (http://openssl.org)
+
   * Lisp libraries (all are ASDF-installable):
 
       drakma
