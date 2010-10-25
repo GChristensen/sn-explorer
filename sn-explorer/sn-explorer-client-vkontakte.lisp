@@ -77,10 +77,8 @@
       (when (sn-x-agent-id session)
 		session))))
 
-(defmethod sn-extract-user-id (session page-url)
-  (let ((body (sn-http-request session
-							   :post
-							   page-url)))
+(defmethod sn-extract-user-id ((session sn-session-vkontakte) page-url)
+  (let ((body (sn-http-request session :post page-url)))
 	(register-groups-bind (id-string)
 		(*agent-id-scanner* body)
 	  (when (not (null id-string))
