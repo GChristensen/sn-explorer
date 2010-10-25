@@ -4,7 +4,7 @@ sn-explorer
 
 sn-explorer is a toy web crawler for social networks written in Common Lisp.
 It implements simplest possible breadth-first network traversal algorithm 
-without multiprocessing and currently supports only popular russian VKontakte
+without multiprocessing and supports only Facebook and popular russian VKontakte
 social network, therefore as is it could be interesting only for the corresponding 
 audience. It fully localized though (offhand and a little clumsy), and it should 
 be relatively easy to add support of any other social network to the sn-explorer. 
