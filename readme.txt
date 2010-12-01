@@ -24,7 +24,7 @@ There is at least two ways to run sn-explorer:
      distribution, which requires the following dependencies:
 
        * Graphviz (http://graphviz.org)
-       * Lisp Execution Proxy (http://lispx-proxy.soruceforge.net)
+       * Lisp Execution Proxy (http://lispx-proxy.sourceforge.net)
        * Suitable Common Lisp implementation accessible through the PATH
          environment variable. Clozure CL (recommended) or SBCL (Linux only) 
          will work.
