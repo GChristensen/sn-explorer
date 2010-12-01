@@ -1,0 +1,4 @@
+- Fix condition systems (make all implementation generate same error)
+- Add INET6 support.
+
+For more TODO items, see http://trac.common-lisp.net/usocket/report.

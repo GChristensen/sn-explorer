@@ -1,0 +1,6 @@
+(lispx-meta
+  (application :name "sn-explorer" :version "GUI AV155-U"
+               :author "(C) 2010 g/christensen (gchristnsn@gmail.com)"
+               :entry-point "sn-explorer-gui:gui-start")
+  (language :init "init.lisp")
+  (depends-on (systems :sn-explorer-gui)))
