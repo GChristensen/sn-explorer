@@ -12,7 +12,7 @@ network to the sn-explorer.
 Besides crawling sn-explorer could also produce graphical social network 
 representation with the Graphviz graph rendering system.
 
-There is at least two ways to run sn-explorer:
+There are at least two ways to run sn-explorer:
 
   1. Download Windows self-contained package, and it should run out of the box 
      (it will also isntall the "Microsoft Visual C++ 2005 Redistributable" 
