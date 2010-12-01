@@ -1,6 +1,0 @@
-LIBRARY	"traymenu"
-
-EXPORTS
-  show_tray_icon
-  hide_tray_icon
-  add_tray_menu_item
