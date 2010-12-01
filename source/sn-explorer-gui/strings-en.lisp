@@ -51,4 +51,4 @@
   (graphviz-error "Graphviz error")
   (view-full-size "View full sized graph")
   (change-viz-settings "Change visualization settings")
-  (new-collection "Back to data collection step"))
+  (new-collection "Back to the data collection step"))
