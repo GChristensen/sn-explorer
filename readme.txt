@@ -2,7 +2,9 @@ sn-explorer
 
 (C) 2010, g/christensen (gchristnsn@gmail.com)
 
-[the `sn-explorer' lib is probably already out of sync with the current target social networks markup]
+[the `sn-explorer' lib is probably already out of sync with the current 
+target social networks HTML-markup, but it may serve as an example of a
+cross-platform executable lispx source distribution]
 
 sn-explorer is a toy web crawler for social networks written in Common Lisp.
 It implements simplest possible breadth-first network traversal algorithm 
